@@ -39,25 +39,10 @@ void randomAffirmation();
 
 int main() {
 
-    //introductionStatement();
+    introductionStatement();
 
 /*
-    int minutes = 0;
-    int option;
-
-    while(option < 6 && option > 0)
-    {
-        cout << "----------------------------------------" << endl;
-
-        cout << "1. Pomodoro Technique\n"
-             << "2. 52/17 rule\n"
-             << "3. Animedoro\n"
-             << "4. 35/5\n"
-             << "5. 90/20 rule\n"
-             << "6. 112/26 rule\n";
-
-        cout << "----------------------------------------" << endl;
-    }
+    
     this_thread::sleep_for(chrono::minutes(minutes));
     cout << "3 seconds!";
 */
@@ -74,6 +59,62 @@ void introductionStatement()
 
     this_thread::sleep_for(chrono::seconds(6));
 
-    cout << "Simply pick one of the following study techniques you would like to do, then I'll explain how this works." << endl;
+    cout << "Simply pick one of the following study techniques you would like to do, based on the number you type, then I'll explain how this works." << endl;
+
+    int playerChoice;
+    char confirmApproval;
+
+    while(playerChoice < 1 && playerChoice > 6)
+    {
+        cout << "----------------------------------------" << endl;
+
+        cout << "1. Pomodoro Technique\n"
+             << "2. 52/17 rule\n"
+             << "3. Animedoro\n"
+             << "4. 35/5\n"
+             << "5. 90/20 rule\n"
+             << "6. 112/26 rule\n";
+
+        cout << "----------------------------------------" << endl;
+
+        cout << "Option: ";
+        cin >> playerChoice;
+
+        if(playerChoice < 1 && playerChoice > 6)
+        {
+            cout << "Whoops! It looks like that option isn't available. Please try again.\n";
+        }
+        else if(playerChoice == 1)
+        {
+            cout << "Pomodoro technique instructions, along with confirmation to use it.\n";
+            cin >> confirmApproval;
+        }
+        else if(playerChoice == 2)
+        {
+            cout << "52/17 rule instructions, along with confirmation to use it.\n";
+            cin >> confirmApproval;
+        }
+        else if(playerChoice == 3)
+        {
+            cout << "Animedoro instructions, along with confirmation to use it.\n";
+            cin >> confirmApproval;
+        }
+        else if(playerChoice == 4)
+        {
+            cout << "35/5 rule instructions, along with confirmation to use it.\n";
+            cin >> confirmApproval;
+        }
+        else if(playerChoice == 5)
+        {
+            cout << "90/20 rule instructions, along with confirmation to use it.\n";
+            cin >> confirmApproval;
+        }
+        else if(playerChoice == 6)
+        {
+            cout << "112/26 rule instructions, along with confirmation to use it.\n";
+            cin >> confirmApproval;
+        };
+    };
+
 
 }
