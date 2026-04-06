@@ -3,7 +3,7 @@
 #include <thread>
 using namespace std;
 
-
+//Editor's note, I will be changing messages found on lines 67-116.
 //Need chrono and thread for time duration
 
 /*
@@ -34,24 +34,49 @@ I become 1% percent better every day.
 // 5. 90/20 rule: 90 min study, 20 min break, 3 sessions
 // 6. 112/26 rule: 112 min study, 26 min break, 2-3 sessions
 
-void introductionStatement();
-void randomAffirmation();
+int introductionStatement();
+//void randomAffirmation();
 
 int main() {
 
-    introductionStatement();
+    int studyTechnique = introductionStatement();
 
+    if(studyTechnique == 1)
+    {
+        cout << "start 1";
+        
+    }
+    else if(studyTechnique == 2)
+    {
+        cout << "start 2";
+
+    }
+    else if(studyTechnique == 3)
+    {
+        cout << "start 3";
+    }
+    else if(studyTechnique == 4)
+    {
+        cout << "start 4";
+    }
+    else if(studyTechnique == 5)
+    {
+        cout << "start 5";
+    }
+    else if(studyTechnique == 6)
+    {
+        cout << "start 6";
+    };
 /*
     
     this_thread::sleep_for(chrono::minutes(minutes));
     cout << "3 seconds!";
 */
-
-
     return 0;
 }
 
-void introductionStatement()
+
+int introductionStatement()
 {
 
     cout << "This program will change your life for the better!\n"
@@ -64,7 +89,7 @@ void introductionStatement()
     int playerChoice;
     char confirmApproval;
 
-    while(playerChoice < 1 && playerChoice > 6)
+    while((playerChoice < 1 && playerChoice > 6) && (confirmApproval != 'Y' || confirmApproval != 'y')) //Possibly wrong logic, please work as soon as possible.
     {
         cout << "----------------------------------------" << endl;
 
@@ -114,7 +139,46 @@ void introductionStatement()
             cout << "112/26 rule instructions, along with confirmation to use it.\n";
             cin >> confirmApproval;
         };
+
+
+
+        if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 1)
+        {
+            cout << "Then let's get started! The study session begins now.\n";
+            return 1;
+        }
+        else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 2)
+        {
+            cout << "Then let's get started! The study session begins now.\n";
+            return 2;
+        }
+        else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 3)
+        {
+            cout << "Then let's get started! The study session begins now.\n";
+            return 3;
+        }
+        else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 4)
+        {
+            cout << "Then let's get started! The study session begins now.\n";
+            return 4;
+        }
+        else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 5)
+        {
+            cout << "Then let's get started! The study session begins now.\n";
+            return 5;
+        }
+        else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 6)
+        {
+            cout << "Then let's get started! The study session begins now.\n";
+            return 6;
+        };
     };
 
+}
+
+/*
+void randomAffirmation()
+{
 
 }
+*/
