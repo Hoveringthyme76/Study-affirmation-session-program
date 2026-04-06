@@ -89,7 +89,7 @@ int introductionStatement()
     int playerChoice;
     char confirmApproval;
 
-    while((playerChoice < 1 && playerChoice > 6) && (confirmApproval != 'Y' || confirmApproval != 'y')) //Possibly wrong logic, please work as soon as possible.
+    while((playerChoice < 1 && playerChoice > 6) && (confirmApproval != 'Y' || confirmApproval != 'y')) //A quick reminder that I have to fix this logic as the function won't return an integer which breaks the program
     {
         cout << "----------------------------------------" << endl;
 
