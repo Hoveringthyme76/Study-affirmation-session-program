@@ -3,29 +3,9 @@
 #include <thread>
 using namespace std;
 
-//Editor's note, I will be changing messages found on lines 67-116.
+//Editor's note, I will be changing messages found on some of the lines of the introductionStatement.
 //Need chrono and thread for time duration
 
-/*
-POSSIBLE AFFIRMATIONS TO USE:
-
-My failures don't define who I am.
-Grace gives me room to be inperfect.
-I am a work in progress, and that's ok.
-I have everything I need today.
-you can let go of what you can't control.
-you are heard and loved.
-I can choose to take it easy.
-Everything is happening in my favor.
-My finances, relationships, and health are growing better and better.
-You can challenge yourself.
-It's not over till it's over.
-I can survive.
-You are a warrior.
-You are full of love and hope.
-I become 1% percent better every day.
-
-*/
 // STUDY TECHNIQUES TO CHOOSE FROM:
 // 1. Pomodoro Technique: 25 min study, 5 min break, 3-4 sessions
 // 2. 52/17 rule: 52 min study, 15 min break, 2-4 sessions
@@ -35,11 +15,16 @@ I become 1% percent better every day.
 // 6. 112/26 rule: 112 min study, 26 min break, 2-3 sessions
 
 int introductionStatement();
-//void randomAffirmation();
+
+void studyCycle(int studyTechnique);
+void randomAffirmation();
 
 int main() {
 
     int studyTechnique = introductionStatement();
+    //int studyTechnique;
+    //cin >> studyTechnique; //int studyTechnique and cin >> studyTechnique will be removed once I finished testing out the if else logic.
+
 
     if(studyTechnique == 1)
     {
@@ -89,7 +74,7 @@ int introductionStatement()
     int playerChoice;
     char confirmApproval;
 
-    while((playerChoice < 1 && playerChoice > 6) && (confirmApproval != 'Y' || confirmApproval != 'y')) //A quick reminder that I have to fix this logic as the function won't return an integer which breaks the program
+    while((playerChoice < 1 || playerChoice > 6) && (confirmApproval != 'Y' || confirmApproval != 'y')) //Possibly wrong logic, please work as soon as possible.
     {
         cout << "----------------------------------------" << endl;
 
@@ -142,7 +127,7 @@ int introductionStatement()
 
 
 
-        if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 1)
+        if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 1) //I might make it so it counts down before it starts the session, but I haven't decided yet.
         {
             cout << "Then let's get started! The study session begins now.\n";
             return 1;
@@ -176,9 +161,28 @@ int introductionStatement()
 
 }
 
-/*
+
 void randomAffirmation()
 {
+/*
+POSSIBLE AFFIRMATIONS TO USE:
+
+My failures don't define who I am.
+Grace gives me room to be inperfect.
+I am a work in progress, and that's ok.
+I have everything I need today.
+you can let go of what you can't control.
+you are heard and loved.
+I can choose to take it easy.
+Everything is happening in my favor.
+My finances, relationships, and health are growing better and better.
+You can challenge yourself.
+It's not over till it's over.
+I can survive.
+You are a warrior.
+You are full of love and hope.
+I become 1% percent better every day.
+*/
+
 
 }
-*/
