@@ -1,10 +1,15 @@
 #include <iostream>
+#include <string>
 #include <chrono>
 #include <thread>
 using namespace std;
 
-//Editor's note, I will be changing messages found on some of the lines of the introductionStatement.
-//Need chrono and thread for time duration
+//Editor's note, I will be changing messages found on lines 67-116.
+//Need chrono and thread for time duration.
+
+
+// IMPORTANT REMINDER: This code is almost done, all I need to do now is make sure that I make it so the program prints a random affirmation every few minutes, tweak the visual messages
+//                     then use allow myself and others to use this program if they find a use for it.
 
 // STUDY TECHNIQUES TO CHOOSE FROM:
 // 1. Pomodoro Technique: 25 min study, 5 min break, 3-4 sessions
@@ -21,42 +26,53 @@ void randomAffirmation();
 
 int main() {
 
-    int studyTechnique = introductionStatement();
-    //int studyTechnique;
-    //cin >> studyTechnique; //int studyTechnique and cin >> studyTechnique will be removed once I finished testing out the if else logic.
+    //int studyTechnique = introductionStatement();
+    int studyTechnique;
+    cin >> studyTechnique; //int studyTechnique and cin >> studyTechnique will be removed once I finished testing out the if else logic.
 
 
     if(studyTechnique == 1)
     {
         cout << "start 1";
-        
+        studyCycle(studyTechnique);
     }
     else if(studyTechnique == 2)
     {
         cout << "start 2";
-
+        studyCycle(studyTechnique);
     }
     else if(studyTechnique == 3)
     {
         cout << "start 3";
+        studyCycle(studyTechnique);
     }
     else if(studyTechnique == 4)
     {
         cout << "start 4";
+        studyCycle(studyTechnique);
     }
     else if(studyTechnique == 5)
     {
         cout << "start 5";
+        studyCycle(studyTechnique);
     }
     else if(studyTechnique == 6)
     {
         cout << "start 6";
+        studyCycle(studyTechnique);
     };
 /*
     
     this_thread::sleep_for(chrono::minutes(minutes));
     cout << "3 seconds!";
 */
+    //Mainly just a safety precaution in case the while loop on the introductionStatement() function managed to stop somehow.
+    if(studyTechnique == 0)
+    {
+        cout << "Congradulations, you managed to break the code in a way that I didn't see coming!\n"
+             << "I'm so grateful that you found a flaw in this program and you should be proud of yourself for finding it the way you did.\n"
+             << "If you would like me to improve this line of code in some way, then feel free to reach out to me, so I can take a look at it." << endl;
+    }
     return 0;
 }
 
@@ -74,7 +90,7 @@ int introductionStatement()
     int playerChoice;
     char confirmApproval;
 
-    while((playerChoice < 1 || playerChoice > 6) && (confirmApproval != 'Y' || confirmApproval != 'y')) //Possibly wrong logic, please work as soon as possible.
+    while((playerChoice < 1 || playerChoice > 6) && (confirmApproval != 'Y' || confirmApproval != 'y'))
     {
         cout << "----------------------------------------" << endl;
 
@@ -159,8 +175,37 @@ int introductionStatement()
         };
     };
 
-}
+    return 0;
+};
 
+void studyCycle(int studyTechnique)
+{
+    if(studyTechnique == 1)
+    {
+        cout << "10";
+    }
+    else if(studyTechnique == 2)
+    {
+        cout << "20";
+
+    }
+    else if(studyTechnique == 3)
+    {
+        cout << "30";
+    }
+    else if(studyTechnique == 4)
+    {
+        cout << "40";
+    }
+    else if(studyTechnique == 5)
+    {
+        cout << "50";
+    }
+    else if(studyTechnique == 6)
+    {
+        cout << "60";
+    };
+}
 
 void randomAffirmation()
 {
