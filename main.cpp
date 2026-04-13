@@ -12,7 +12,7 @@ using namespace std;
 //                     then use allow myself and others to use this program if they find a use for it.
 
 // STUDY TECHNIQUES TO CHOOSE FROM:
-// 1. Pomodoro Technique: 25 min study, 5 min break, 3-4 sessions
+// 1. Pomodoro Technique: 25 min study, 5 min break, 3-4 sessions sends an affirmation once every 15 minutes.
 // 2. 52/17 rule: 52 min study, 15 min break, 2-4 sessions
 // 3. Animedoro: 60 min study, 20 min break(preferably with anime), 3-4 sessions
 // 4. 35/5 rule: 35 min study, 5 min break, 3-4 sessions
@@ -180,8 +180,12 @@ int introductionStatement()
 
 void studyCycle(int studyTechnique)
 {
+    int minutes;
+
     if(studyTechnique == 1)
     {
+        minutes = 15;
+        this_thread::sleep_for(chrono::minutes(minutes));
         cout << "10";
     }
     else if(studyTechnique == 2)
@@ -229,5 +233,19 @@ You are full of love and hope.
 I become 1% percent better every day.
 */
 
-
+    string affirmations[] = {"My failures don't define who I am.",
+                             "Grace gives me room to be inperfect.",
+                             "I am a work in progress, and that's ok.", 
+                             "I have everything I need today.", 
+                             "you can let go of what you can't control.", 
+                             "you are heard and loved.", 
+                             "I can choose to take it easy.", 
+                             "Everything is happening in my favor.", 
+                             "My finances, relationships, and health are growing better and better.", 
+                             "You can challenge yourself.", 
+                             "It's not over till it's over.", 
+                             "I can survive.", 
+                             "You are a warrior.", 
+                             "You are full of love and hope.", 
+                             "I become 1 percent better every day."}; //Should I change these positive affirmations?
 }
