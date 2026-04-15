@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include <chrono>
 #include <thread>
 using namespace std;
@@ -33,7 +35,7 @@ int main() {
 
     if(studyTechnique == 1)
     {
-        cout << "start 1";
+        cout << "start 1\n";
         studyCycle(studyTechnique);
     }
     else if(studyTechnique == 2)
@@ -184,35 +186,40 @@ void studyCycle(int studyTechnique)
 
     if(studyTechnique == 1)
     {
-        minutes = 15;
-        this_thread::sleep_for(chrono::minutes(minutes));
-        cout << "10";
+        minutes = 3;
+        this_thread::sleep_for(chrono::seconds(minutes));
+        randomAffirmation();
     }
     else if(studyTechnique == 2)
     {
         cout << "20";
-
+        randomAffirmation();
     }
     else if(studyTechnique == 3)
     {
         cout << "30";
+        randomAffirmation();
     }
     else if(studyTechnique == 4)
     {
         cout << "40";
+        randomAffirmation();
     }
     else if(studyTechnique == 5)
     {
         cout << "50";
+        randomAffirmation();
     }
     else if(studyTechnique == 6)
     {
         cout << "60";
+        randomAffirmation();
     };
 }
 
 void randomAffirmation()
 {
+    srand(time(0));   //Puts a starting value on my random number generator
 /*
 POSSIBLE AFFIRMATIONS TO USE:
 
@@ -247,5 +254,9 @@ I become 1% percent better every day.
                              "I can survive.", 
                              "You are a warrior.", 
                              "You are full of love and hope.", 
-                             "I become 1 percent better every day."}; //Should I change these positive affirmations?
+                             "I become 1 percent better every day."};//Should I change these positive affirmations?
+
+    int randomNum = rand() % 16;
+
+    cout << affirmations[randomNum] << endl;
 }
