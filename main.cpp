@@ -15,11 +15,11 @@ using namespace std;
 
 // STUDY TECHNIQUES TO CHOOSE FROM:
 // 1. Pomodoro Technique: 25 min study, 5 min break, 3-4 sessions sends an affirmation once every 15 minutes.
-// 2. 52/17 rule: 52 min study, 15 min break, 2-4 sessions
-// 3. Animedoro: 60 min study, 20 min break(preferably with anime), 3-4 sessions
-// 4. 35/5 rule: 35 min study, 5 min break, 3-4 sessions
-// 5. 90/20 rule: 90 min study, 20 min break, 3 sessions
-// 6. 112/26 rule: 112 min study, 26 min break, 2-3 sessions
+// 2. 52/17 rule: 52 min study, 17 min break, 2-4 sessions sends an affirmation once every 23 minutes.
+// 3. Animedoro: 60 min study, 20 min break(with or without anime), 3-4 sessions sends an affirmation once every 20 minutes.
+// 4. 35/5 rule: 35 min study, 5 min break, 3-4 sessions sends an affirmation once every 16 minutes
+// 5. 90/20 rule: 90 min study, 20 min break, 3 sessions sends an affirmation once every 10 minutes
+// 6. 112/26 rule: 112 min study, 26 min break, 2-3 sessions sends an affirmation once every 18 minutes
 
 int introductionStatement();
 
@@ -182,63 +182,67 @@ int introductionStatement()
 
 void studyCycle(int studyTechnique)
 {
-    int minutes;
-
+    int minutes, i;
+//Change the minutes and the amount of time each for loop runs accordingly by refering to lines 17-22. 4-6 need changing.
     if(studyTechnique == 1)
     {
-        minutes = 3;
-        this_thread::sleep_for(chrono::seconds(minutes));
-        randomAffirmation();
+        for(i = 0; i < 8; i++)
+        {
+            minutes = 15;
+            this_thread::sleep_for(chrono::minutes(minutes));
+            randomAffirmation();
+        };
     }
     else if(studyTechnique == 2)
     {
-        cout << "20";
-        randomAffirmation();
+        for(i = 0; i < 12; i++)
+        {
+            minutes = 23;
+            this_thread::sleep_for(chrono::minutes(minutes));
+            randomAffirmation();
+        };
     }
     else if(studyTechnique == 3)
     {
-        cout << "30";
-        randomAffirmation();
+        for(i = 0; i < 10; i++)
+        {
+            minutes = 16;
+            this_thread::sleep_for(chrono::minutes(minutes));
+            randomAffirmation();
+        };
     }
     else if(studyTechnique == 4)
     {
-        cout << "40";
-        randomAffirmation();
+        for(i = 0; i < 8; i++)
+        {
+            minutes = 15;
+            this_thread::sleep_for(chrono::minutes(minutes));
+            randomAffirmation();
+        };
     }
     else if(studyTechnique == 5)
     {
-        cout << "50";
-        randomAffirmation();
+        for(i = 0; i < 8; i++)
+        {
+            minutes = 15;
+            this_thread::sleep_for(chrono::minutes(minutes));
+            randomAffirmation();
+        };
     }
     else if(studyTechnique == 6)
     {
-        cout << "60";
-        randomAffirmation();
+        for(i = 0; i < 8; i++)
+        {
+            minutes = 15;
+            this_thread::sleep_for(chrono::minutes(minutes));
+            randomAffirmation();
+        };
     };
 }
 
 void randomAffirmation()
 {
-    srand(time(0));   //Puts a starting value on my random number generator
-/*
-POSSIBLE AFFIRMATIONS TO USE:
-
-My failures don't define who I am.
-Grace gives me room to be inperfect.
-I am a work in progress, and that's ok.
-I have everything I need today.
-you can let go of what you can't control.
-you are heard and loved.
-I can choose to take it easy.
-Everything is happening in my favor.
-My finances, relationships, and health are growing better and better.
-You can challenge yourself.
-It's not over till it's over.
-I can survive.
-You are a warrior.
-You are full of love and hope.
-I become 1% percent better every day.
-*/
+    srand(time(0));   //Puts a starting value on a random number generator
 
     string affirmations[] = {"My failures don't define who I am.",
                              "Grace gives me room to be inperfect.",
