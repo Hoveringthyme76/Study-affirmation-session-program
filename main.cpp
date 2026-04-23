@@ -10,8 +10,8 @@ using namespace std;
 //Need chrono and thread for time duration.
 
 
-// IMPORTANT REMINDER: This code is almost done, all I need to do now is make sure that I make it so the program prints a random affirmation every few minutes, tweak the visual messages
-//                     then use allow myself and others to use this program if they find a use for it.
+// IMPORTANT REMINDER: This code is almost done, all I need to do now is make sure to tweak the visual messages involving the last 3 study techniques, as well as a countdown in the main function.
+
 
 // STUDY TECHNIQUES TO CHOOSE FROM:
 // 1. Pomodoro Technique: 25 min study, 5 min break, 3-4 sessions sends an affirmation once every 15 minutes.
@@ -79,15 +79,15 @@ int main() {
 }
 
 
-int introductionStatement()
+int introductionStatement() //Provides a set of instructions, when the program starts.
 {
 
-    cout << "This program will change your life for the better!\n"
-         << "This program will send you positive affirmations every few minutes during your study session\n";
-
+    cout << "This program will send you positive affirmations every few minutes during your study session\n";
     this_thread::sleep_for(chrono::seconds(6));
 
-    cout << "Simply pick one of the following study techniques you would like to do, based on the number you type, then I'll explain how this works." << endl;
+    cout << "The following options are available. Please select one option, then I will explain what this option will do during your study session." << endl;
+    this_thread::sleep_for(chrono::seconds(3));
+
 
     int playerChoice;
     char confirmApproval;
@@ -114,32 +114,52 @@ int introductionStatement()
         }
         else if(playerChoice == 1)
         {
-            cout << "Pomodoro technique instructions, along with confirmation to use it.\n";
+            cout << "The classic Pomodoro study technique consists of 25 minutes of study, along with a 5 minute break.\n"
+                 << "Most people can use these study cycles 2 to 4 times, which optimizes focus and productivity in short bursts.\n"
+                 << "This program will send you one positive affirmation every 15 minutes, until the end of the max amount of study sessions.\n";
+
+            cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
         }
         else if(playerChoice == 2)
         {
-            cout << "52/17 rule instructions, along with confirmation to use it.\n";
+            cout << "The 52/17 rule is as follows. You study for 52 minutes, while taking long 17 minute breaks.\n"
+                 << "This ensures that your able to increase your concentration, while also giving you meaningful, yet rewarding,\n"
+                 << "breaks to accomadate for longer work hours to allow you to work smarter and not harder for 3 to 4 sessions.\n"
+                 << "This program will send you one positive affirmation every 23 minutes, until the end of your study session.\n";
+
+            cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
         }
         else if(playerChoice == 3)
         {
-            cout << "Animedoro instructions, along with confirmation to use it.\n";
+            cout << "While most animedoro techniques offer 40 minutes study sessions, this program will use the variation of the\n"
+                 << "animedoro technique that includes 60 minute study sessions, along with a 20 minute break paired with an episode of your favorite anime.\n"
+                 << "Using this technique helps boost motivation to study, along with preventing burnout from occuring. There are 4 sessions done here,\n"
+                 << "allowing this program to send one positive affirmation every 20 minutes.\n";
+
+            cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
         }
         else if(playerChoice == 4)
         {
-            cout << "35/5 rule instructions, along with confirmation to use it.\n";
+            cout << "A variation of the Pomodoro, the 35/5 technique is a slightly more study heavy way of studying\n";
+
+            cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
         }
         else if(playerChoice == 5)
         {
             cout << "90/20 rule instructions, along with confirmation to use it.\n";
+
+            cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
         }
         else if(playerChoice == 6)
         {
             cout << "112/26 rule instructions, along with confirmation to use it.\n";
+
+            cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
         };
 
@@ -174,16 +194,20 @@ int introductionStatement()
         {
             cout << "Then let's get started! The study session begins now.\n";
             return 6;
-        };
+        }
+        else
+        {
+            cout << "That's fair. Remember, that the goal is to study in a way that is helpful\n"
+                 << "to you. Any other techniques you want to try?\n";
+        }
     };
 
     return 0;
 };
 
-void studyCycle(int studyTechnique)
+void studyCycle(int studyTechnique) //Responsible for setting the proper time it takes to send one affirmation.
 {
     int minutes, i;
-//Change the minutes and the amount of time each for loop runs accordingly by refering to lines 17-22. 4-6 need changing.
     if(studyTechnique == 1)
     {
         for(i = 0; i < 8; i++)
@@ -204,6 +228,15 @@ void studyCycle(int studyTechnique)
     }
     else if(studyTechnique == 3)
     {
+        for(i = 0; i < 16; i++)
+        {
+            minutes = 20;
+            this_thread::sleep_for(chrono::minutes(minutes));
+            randomAffirmation();
+        };
+    }
+    else if(studyTechnique == 4)
+    {
         for(i = 0; i < 10; i++)
         {
             minutes = 16;
@@ -211,36 +244,27 @@ void studyCycle(int studyTechnique)
             randomAffirmation();
         };
     }
-    else if(studyTechnique == 4)
-    {
-        for(i = 0; i < 8; i++)
-        {
-            minutes = 15;
-            this_thread::sleep_for(chrono::minutes(minutes));
-            randomAffirmation();
-        };
-    }
     else if(studyTechnique == 5)
     {
-        for(i = 0; i < 8; i++)
+        for(i = 0; i < 33; i++)
         {
-            minutes = 15;
+            minutes = 10;
             this_thread::sleep_for(chrono::minutes(minutes));
             randomAffirmation();
         };
     }
     else if(studyTechnique == 6)
     {
-        for(i = 0; i < 8; i++)
+        for(i = 0; i < 23; i++)
         {
-            minutes = 15;
+            minutes = 18;
             this_thread::sleep_for(chrono::minutes(minutes));
             randomAffirmation();
         };
     };
 }
 
-void randomAffirmation()
+void randomAffirmation() //Responsible for outputing one affirmation from the affirmations array.
 {
     srand(time(0));   //Puts a starting value on a random number generator
 
@@ -264,3 +288,4 @@ void randomAffirmation()
 
     cout << affirmations[randomNum] << endl;
 }
+
