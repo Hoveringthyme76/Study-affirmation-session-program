@@ -143,7 +143,8 @@ int introductionStatement() //Provides a set of instructions, when the program s
         }
         else if(playerChoice == 4)
         {
-            cout << "A variation of the Pomodoro, the 35/5 technique is a slightly more study heavy way of studying\n";
+            cout << "A variation of the Pomodoro, the 35/5 technique provides 35 minutes of study and 5 minutes of a break.\n"
+                 << "";
 
             cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
