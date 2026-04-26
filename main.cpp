@@ -144,21 +144,28 @@ int introductionStatement() //Provides a set of instructions, when the program s
         else if(playerChoice == 4)
         {
             cout << "A variation of the Pomodoro, the 35/5 technique provides 35 minutes of study and 5 minutes of a break.\n"
-                 << "";
+                 << "You may do these study cycle's every 3 to 4 times repeatedly, providing similar benefits compared with the Pomodoro technique.\n"
+                 << "This program will send on positive affirmation every 16 minutes.\n";
 
             cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
         }
         else if(playerChoice == 5)
         {
-            cout << "90/20 rule instructions, along with confirmation to use it.\n";
+            cout << "The 90/20 rule involvoes 90 minutes of study, along with a 20 minute break for 3 study sessions cycled.\n"
+                 << "This way of studying is optimal in any work environment, as doing this way of studying, or working, helps when it comes to\n"
+                 << "increasing your work quality, as well as reduces mental fatigue. It is also possible to enter a flow state, when doing this\n"
+                 << "technique. This program will send one positive affirmation every 10 minutes.\n";
 
             cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
         }
         else if(playerChoice == 6)
         {
-            cout << "112/26 rule instructions, along with confirmation to use it.\n";
+            cout << "One of the most hardest study techniques, also known as the 112/26 rule, allows you to study for 112 minutes, with breaks lasting 26 minutes.\n"
+                 << "This allows you to improve your incredibly deep focus, while also improving your energy levels substaintially throughout your day.\n"
+                 << "Most people find the 52/17 rule or the 90/20 rule as productive for there way of studying, so don't be discouraged if you think this technique\n"
+                 << "doesn't help you the way you would like too. This program will send one positive affirmation once every 18 minutes.";
 
             cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
