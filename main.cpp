@@ -6,11 +6,7 @@
 #include <thread>
 using namespace std;
 
-//Editor's note, I will be changing messages found on lines 67-116.
 //Need chrono and thread for time duration.
-
-
-// IMPORTANT REMINDER: This code is almost done, all I need to do now is make sure to tweak the visual messages involving the last 3 study techniques, as well as a countdown in the main function.
 
 
 // STUDY TECHNIQUES TO CHOOSE FROM:
@@ -32,10 +28,15 @@ int main() {
     int studyTechnique;
     cin >> studyTechnique; //int studyTechnique and cin >> studyTechnique will be removed once I finished testing out the if else logic.
 
+    string countdown[] = {"3, ", "2, ", "1, ", "Go!"}
 
     if(studyTechnique == 1)
     {
-        cout << "start 1\n";
+        for(int k = 0; k < 4; k++)
+        {
+            cout << countdown[k];
+        }
+        cout << endl;
         studyCycle(studyTechnique);
     }
     else if(studyTechnique == 2)
@@ -82,11 +83,11 @@ int main() {
 int introductionStatement() //Provides a set of instructions, when the program starts.
 {
 
-    cout << "This program will send you positive affirmations every few minutes during your study session\n";
+    cout << "This program will send you positive affirmations every few minutes during your desired study session.\n";
     this_thread::sleep_for(chrono::seconds(6));
 
     cout << "The following options are available. Please select one option, then I will explain what this option will do during your study session." << endl;
-    this_thread::sleep_for(chrono::seconds(3));
+    this_thread::sleep_for(chrono::seconds(6));
 
 
     int playerChoice;
@@ -175,38 +176,45 @@ int introductionStatement() //Provides a set of instructions, when the program s
 
         if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 1) //I might make it so it counts down before it starts the session, but I haven't decided yet.
         {
-            cout << "Then let's get started! The study session begins now.\n";
+            cout << "Then let's get started! The study session begins in: ";
+            this_thread::sleep_for(chrono::seconds(5));
             return 1;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 2)
         {
-            cout << "Then let's get started! The study session begins now.\n";
+            cout << "Then let's get started! The study session begins in: ";
+            this_thread::sleep_for(chrono::seconds(5));
             return 2;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 3)
         {
-            cout << "Then let's get started! The study session begins now.\n";
+            cout << "Then let's get started! The study session begins in: ";
+            this_thread::sleep_for(chrono::seconds(3));
             return 3;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 4)
         {
-            cout << "Then let's get started! The study session begins now.\n";
+            cout << "Then let's get started! The study session begins in: ";
+            this_thread::sleep_for(chrono::seconds(3));
             return 4;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 5)
         {
-            cout << "Then let's get started! The study session begins now.\n";
+            cout << "Then let's get started! The study session begins in: ";
+            this_thread::sleep_for(chrono::seconds(3));
             return 5;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 6)
         {
-            cout << "Then let's get started! The study session begins now.\n";
+            cout << "Then let's get started! The study session begins in: ";
+            this_thread::sleep_for(chrono::seconds(3));
             return 6;
         }
         else
         {
             cout << "That's fair. Remember, that the goal is to study in a way that is helpful\n"
                  << "to you. Any other techniques you want to try?\n";
+            this_thread::sleep_for(chrono::seconds(3));
         }
     };
 
