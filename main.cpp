@@ -24,51 +24,72 @@ void randomAffirmation();
 
 int main() {
 
-    //int studyTechnique = introductionStatement();
-    int studyTechnique;
-    cin >> studyTechnique; //int studyTechnique and cin >> studyTechnique will be removed once I finished testing out the if else logic.
+    int studyTechnique = introductionStatement();
+    
 
-    string countdown[] = {"3, ", "2, ", "1, ", "Go!"}
+    string countdown[] = {"3, ", "2, ", "1, ", "Go!"};
 
     if(studyTechnique == 1)
     {
         for(int k = 0; k < 4; k++)
         {
             cout << countdown[k];
-        }
+            this_thread::sleep_for(chrono::seconds(1));
+        };
         cout << endl;
         studyCycle(studyTechnique);
     }
     else if(studyTechnique == 2)
     {
-        cout << "start 2";
+        for(int k = 0; k < 4; k++)
+        {
+            cout << countdown[k];
+            this_thread::sleep_for(chrono::seconds(1));
+        };
+        cout << endl;
         studyCycle(studyTechnique);
     }
     else if(studyTechnique == 3)
     {
-        cout << "start 3";
+        for(int k = 0; k < 4; k++)
+        {
+            cout << countdown[k];
+            this_thread::sleep_for(chrono::seconds(1));
+        };
+        cout << endl;
         studyCycle(studyTechnique);
     }
     else if(studyTechnique == 4)
     {
-        cout << "start 4";
+        for(int k = 0; k < 4; k++)
+        {
+            cout << countdown[k];
+            this_thread::sleep_for(chrono::seconds(1));
+        };
+        cout << endl;
         studyCycle(studyTechnique);
     }
     else if(studyTechnique == 5)
     {
-        cout << "start 5";
+        for(int k = 0; k < 4; k++)
+        {
+            cout << countdown[k];
+            this_thread::sleep_for(chrono::seconds(1));
+        };
+        cout << endl;
         studyCycle(studyTechnique);
     }
     else if(studyTechnique == 6)
     {
-        cout << "start 6";
+        for(int k = 0; k < 4; k++)
+        {
+            cout << countdown[k];
+            this_thread::sleep_for(chrono::seconds(1));
+        };
+        cout << endl;
         studyCycle(studyTechnique);
     };
-/*
-    
-    this_thread::sleep_for(chrono::minutes(minutes));
-    cout << "3 seconds!";
-*/
+
     //Mainly just a safety precaution in case the while loop on the introductionStatement() function managed to stop somehow.
     if(studyTechnique == 0)
     {
@@ -176,37 +197,37 @@ int introductionStatement() //Provides a set of instructions, when the program s
 
         if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 1) //I might make it so it counts down before it starts the session, but I haven't decided yet.
         {
-            cout << "Then let's get started! The study session begins in: ";
+            cout << "Then let's get started! The study session begins in: \n";
             this_thread::sleep_for(chrono::seconds(5));
             return 1;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 2)
         {
-            cout << "Then let's get started! The study session begins in: ";
+            cout << "Then let's get started! The study session begins in: \n";
             this_thread::sleep_for(chrono::seconds(5));
             return 2;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 3)
         {
-            cout << "Then let's get started! The study session begins in: ";
+            cout << "Then let's get started! The study session begins in: \n";
             this_thread::sleep_for(chrono::seconds(3));
             return 3;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 4)
         {
-            cout << "Then let's get started! The study session begins in: ";
+            cout << "Then let's get started! The study session begins in: \n";
             this_thread::sleep_for(chrono::seconds(3));
             return 4;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 5)
         {
-            cout << "Then let's get started! The study session begins in: ";
+            cout << "Then let's get started! The study session begins in: \n";
             this_thread::sleep_for(chrono::seconds(3));
             return 5;
         }
         else if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 6)
         {
-            cout << "Then let's get started! The study session begins in: ";
+            cout << "Then let's get started! The study session begins in: \n";
             this_thread::sleep_for(chrono::seconds(3));
             return 6;
         }
@@ -298,10 +319,9 @@ void randomAffirmation() //Responsible for outputing one affirmation from the af
                              "I can survive.", 
                              "You are a warrior.", 
                              "You are full of love and hope.", 
-                             "I become 1 percent better every day."};//Should I change these positive affirmations?
+                             "I become 1 percent better every day."};
 
     int randomNum = rand() % 16;
 
     cout << affirmations[randomNum] << endl;
 }
-
