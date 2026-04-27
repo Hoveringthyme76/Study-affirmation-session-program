@@ -112,9 +112,9 @@ int introductionStatement() //Provides a set of instructions, when the program s
 
 
     int playerChoice;
-    char confirmApproval;
+    char confirmApproval = 'N';
 
-    while((playerChoice < 1 || playerChoice > 6) && (confirmApproval != 'Y' || confirmApproval != 'y'))
+    while((playerChoice < 1 || playerChoice > 6) && (confirmApproval == 'N' || confirmApproval == 'n')) //Test the logic in the compiler, in order to ensure that the loop ends when one option is choosen and the confirmation is Y.
     {
         cout << "----------------------------------------" << endl;
 
