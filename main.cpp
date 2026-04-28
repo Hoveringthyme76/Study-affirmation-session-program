@@ -112,9 +112,11 @@ int introductionStatement() //Provides a set of instructions, when the program s
 
 
     int playerChoice;
-    char confirmApproval = 'N';
+    char confirmApproval = 'n'; //intializes the variable to make the while loop run.
 
-    while((playerChoice < 1 || playerChoice > 6) && (confirmApproval == 'N' || confirmApproval == 'n')) //Test the logic in the compiler, in order to ensure that the loop ends when one option is choosen and the confirmation is Y.
+    //Possibly don't understand the logic in this loop. But it should work if you can pick an invalid choice, or pick a valid choid but confirm as no to restart the loop properly.
+    //
+    while((playerChoice < 1 || playerChoice > 6) && (confirmApproval == 'N' || confirmApproval == 'n'))
     {
         cout << "----------------------------------------" << endl;
 
@@ -195,7 +197,7 @@ int introductionStatement() //Provides a set of instructions, when the program s
 
 
 
-        if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 1) //I might make it so it counts down before it starts the session, but I haven't decided yet.
+        if((confirmApproval == 'Y' || confirmApproval == 'y') && playerChoice == 1)
         {
             cout << "Then let's get started! The study session begins in: \n";
             this_thread::sleep_for(chrono::seconds(5));
@@ -236,6 +238,7 @@ int introductionStatement() //Provides a set of instructions, when the program s
             cout << "That's fair. Remember, that the goal is to study in a way that is helpful\n"
                  << "to you. Any other techniques you want to try?\n";
             this_thread::sleep_for(chrono::seconds(3));
+            continue;
         }
     };
 
