@@ -111,11 +111,11 @@ int introductionStatement() //Provides a set of instructions, when the program s
     this_thread::sleep_for(chrono::seconds(6));
 
 
-    int playerChoice;
+    int playerChoice = 0;
     char confirmApproval = 'n'; //intializes the variable to make the while loop run.
 
-    //Possibly don't understand the logic in this loop. But it should work if you can pick an invalid choice, or pick a valid choid but confirm as no to restart the loop properly.
-    //
+    //This logic should work if you can pick an invalid choice, or pick a valid choid but confirm as no to restart the loop properly. This means the logic in the loop will have to change.
+    //The question now remains, how can I make the logic in this loop work the way I wish to?
     while((playerChoice < 1 || playerChoice > 6) && (confirmApproval == 'N' || confirmApproval == 'n'))
     {
         cout << "----------------------------------------" << endl;
@@ -189,7 +189,7 @@ int introductionStatement() //Provides a set of instructions, when the program s
             cout << "One of the most hardest study techniques, also known as the 112/26 rule, allows you to study for 112 minutes, with breaks lasting 26 minutes.\n"
                  << "This allows you to improve your incredibly deep focus, while also improving your energy levels substaintially throughout your day.\n"
                  << "Most people find the 52/17 rule or the 90/20 rule as productive for there way of studying, so don't be discouraged if you think this technique\n"
-                 << "doesn't help you the way you would like too. This program will send one positive affirmation once every 18 minutes.";
+                 << "doesn't help you the way you would like too. This program will send one positive affirmation once every 18 minutes.\n";
 
             cout << "Would you like to study this way? (Y/N):\n";
             cin >> confirmApproval;
@@ -235,6 +235,8 @@ int introductionStatement() //Provides a set of instructions, when the program s
         }
         else
         {
+            playerChoice = 0;
+
             cout << "That's fair. Remember, that the goal is to study in a way that is helpful\n"
                  << "to you. Any other techniques you want to try?\n";
             this_thread::sleep_for(chrono::seconds(3));
@@ -327,4 +329,4 @@ void randomAffirmation() //Responsible for outputing one affirmation from the af
     int randomNum = rand() % 16;
 
     cout << affirmations[randomNum] << endl;
-}
+}//If I go back and list more affirmations in the array, I will have to consider what I'm changing in the random number generator on line 329 as well.
