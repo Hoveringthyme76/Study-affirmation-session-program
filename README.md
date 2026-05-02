@@ -1,6 +1,6 @@
 # Study-affirmation-session-program
-This program allows the user to choose how they study or work, while occasionally obtaining possitive affirmations while they work. Make it a viable tool to use in any work environment your placed in.
+This program allows the user to choose how they study or work in their respective fields. You simply choose a study technique from the list of options available, then the program will send one positive affirmation every few minutes.
 # Installation
 To run this program, you'll need to install the latest version of C++
 # Contributing
-I am using this project for my own personal use, but I'm always willing to allow anyone to make any changes to the program so it can help them out in some way.
+I am mainly using this project to help me through the fundamentals of C++, as well as possibly other programming languages. If you would like to make any changes to this program, then you are more than welcome too.
