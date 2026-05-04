@@ -114,8 +114,7 @@ int introductionStatement() //Provides a set of instructions, when the program s
     int playerChoice = 0;
     char confirmApproval = 'n'; //intializes the variable to make the while loop run.
 
-    //This logic should work if you can pick an invalid choice, or pick a valid choid but confirm as no to restart the loop properly. This means the logic in the loop will have to change.
-    //The question now remains, how can I make the logic in this loop work the way I wish to?
+    
     while((playerChoice < 1 || playerChoice > 6) && (confirmApproval == 'N' || confirmApproval == 'n'))
     {
         cout << "----------------------------------------" << endl;
